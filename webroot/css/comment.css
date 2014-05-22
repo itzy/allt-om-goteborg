@@ -1,0 +1,7 @@
+.comment { width: 400px; min-height: 20px; }
+.comment .name { color: #32cd32; font-style: italic; border-bottom: 1px solid #000; }
+.comment .content { color: #000; font-style: normal; }
+
+
+form.comment input[type=submit] { border: 0px; color: #999; font-size: italic; display: inline; background: #fff;}
+form.comment input[type=submit]:hover { color: #000; text-decoration: underline;}

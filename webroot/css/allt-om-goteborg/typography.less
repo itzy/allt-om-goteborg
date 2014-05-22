@@ -1,0 +1,468 @@
+/** --------------------------------------------------------------
+ * Typography settings for a default rythm.
+ *
+ */
+
+
+/** --------------------------------------------------------------
+ * Body
+ */
+//body{font:100.01%/1.375 @font-family-helvetica;}
+body {
+  .body-font();
+}
+
+
+/** --------------------------------------------------------------
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: @fontFamilyHeadings;
+  margin-top: 0;
+  margin-bottom: @magicNumber;
+  img {
+    margin: 0;
+  }
+}
+
+h1 {
+  .font-size(@fontSizeH1);
+  font-weight: normal;
+  & ~ h2, & ~ h3, & ~ h4, & ~ h5, & ~ h6 {
+    margin-top: @magicNumber * 2;
+  }
+}
+
+h2 {
+  .font-size(@fontSizeH2);
+  font-weight: normal;
+  & ~ h3 {
+    margin-top: @magicNumber;
+  }
+}
+
+h3 {
+  .font-size(@fontSizeH3);
+  font-weight: normal;
+}
+
+h4 {
+  .font-size(@fontSizeH4);
+  font-weight: normal;
+}
+
+h5 {
+  .font-size(@fontSizeH5);
+}
+
+h6 {
+  .font-size(@fontSizeH6);
+}
+
+/*
+h1{.headings-general();font-size:2.375em;line-height:1.1579;border-bottom:1px solid #ccc;margin-bottom:@magic-number - 1px;}
+h2{.headings-general();font-size:1.875em;line-height:1.4667;border-bottom:1px solid #ccc;margin-bottom:@magic-number - 1px;}
+h3{.headings-general();font-size:1.375em;line-height:1;}
+h4{.headings-general();font-size:1.25em;line-height:1.1;}
+h5{.headings-general();font-size:1em;font-weight:bold;}
+h6{.headings-general();font-size:1em;font-weight:bold;margin-bottom:0;}
+h1 img,h2 img,h3 img,h4 img,h5 img,h6 img{margin:0;}
+*/
+
+
+/** --------------------------------------------------------------
+ * Text elements
+ */
+p {
+  margin-top: 0;
+  margin-bottom: @magicNumber;
+}
+
+small, .small, .smaller {
+  .font-size(@fontSizeSmall);
+}
+
+blockquote {
+  border-left: 2px solid @colorBorderLight;
+  padding-left: 1em;
+  margin-left: 0;
+  margin-bottom: @magicNumber;
+}
+
+strong, b{
+  font-weight: bold;
+}
+
+mark {
+  color: @colorMark;
+  background-color: @bgColorMark;
+}
+
+abbr[title] {
+
+}
+
+em,i,dfn{font-style:italic;}
+
+sub,sup{font-size:0.75em;line-height:0;position:relative;vertical-align: baseline;}
+sup{top:-0.5em;}
+sub{bottom:-0.25em;}
+
+
+/** --------------------------------------------------------------
+ * Display source code.
+ */
+pre{margin-bottom:1.375em;white-space:pre;}
+pre,code,kbd,samp,.code{font:1em/1.375 @fontFamilyMonospace;}
+
+p code,
+td > code {
+  white-space: nowrap;
+  border: 1px solid #ccc;
+  background-color: #f6f6f6;
+  padding: 0.1em 0.2em 0.1em 0.2em;
+  border-radius: 2px;
+}
+
+div.code{white-space:pre;}
+div.code, pre code{display:block;overflow:auto;}
+div.code, pre code, .geshi{border-top:1px solid #ccc;border-bottom:1px solid #ccc; padding-top:@magicNumber * 0.5;
+padding-bottom:@magicNumber * 0.5;margin-bottom:@magicNumber - 2px;background-color:#eee;padding-left:0.5em;}
+
+
+/** --------------------------------------------------------------
+ * Lists
+ */
+//ul,ol{margin:0.6875em 1.5em 1.375em 0;padding-left:1.5em;}
+ul, 
+ol {
+  margin: 0 0 @magicNumber 0;
+  padding-left: 1.5em;
+  p { 
+    margin-top: @magicNumber / 2;
+    margin-bottom: @magicNumber / 2;
+  }
+}
+
+li ul, 
+li ol, 
+ol ol, 
+ul ul, 
+ul ol, 
+ol ul {
+  margin: 0;
+}
+
+ul {
+  margin-left: -8px;
+  list-style-type:disc;
+}
+
+ol {
+  list-style-type:decimal;
+}
+
+dl {
+  margin:0 0 1.375em 0;
+}
+
+dt { 
+  font-weight:bold;
+}
+
+dd { 
+  margin-left:1.5em;
+}
+
+dl.dl-horizontal {
+  .clearfix();
+  @margin: 5em;
+  dt {
+    clear: left;
+    float: left;
+    width: @margin
+  } 
+  dd {
+    margin-left: @margin + 1em;
+    display:block;
+  } 
+}
+
+
+
+/** --------------------------------------------------------------
+ * Tables. Because of the need for padding on TH and TD, the vertical rhythm
+ * on table cells has to be 1.5*@magic-number.
+ */
+table {
+
+}
+
+article table, 
+.table {
+  margin-bottom: @magicNumber;
+  width: 100%;
+}
+
+article caption,
+.table  caption { 
+  text-align: left;
+  font-style: italic;
+}
+
+article thead,
+.table  thead { 
+  border-bottom: 2px solid @colorTableHeaderBorder;
+}
+
+article th,
+.table  th { 
+  vertical-align:bottom;font-weight:bold;text-align:left;
+}
+
+article th,
+article td,
+.table  th,
+.table  td {
+  // should use @magicNumber
+  padding: 5px 10px 5px 5px;
+}
+
+.table-striped tbody tr:nth-child(even) td,
+.table-striped tbody tr.even td {
+  background-color: @bgColorTableStripe;
+}
+
+article tbody tr,
+.table  tbody tr {
+  border-bottom: 1px solid @colorTableRowBorder;
+  &:hover {
+    color: @colorTableRowHover;
+    border-color: @colorTableRowBorderHover;
+  }
+}
+
+article tfoot,
+.table  tfoot {
+  font-style: italic;
+}
+
+
+
+/** --------------------------------------------------------------
+ * More
+ */
+hr {
+  color: @colorBorderLight;  
+  border-color: @colorBorderLight;
+  margin: @magicNumber auto;
+}
+
+.sitetitle {
+  position: absolute;
+  top: 76px;
+  font-size: @magicNumber * 2;
+}
+
+.siteslogan {
+  position: absolute;
+  top: 135px;
+  font-style: italic;
+  color: #666;
+}
+
+.byline {
+  margin-top: @magicNumber * 2;
+  border-top: 1px dashed #ccc;
+  border-bottom: 1px dashed #ccc;
+  padding-top: @magicNumber;
+  margin-bottom: @magicNumber;
+  color: #666;
+  font-size: @magicNumber / 3 * 2;
+  font-style: italic;
+}
+
+.topheaderBox {
+  width: 95%;
+  float:left;
+}
+
+.topheaderright {
+  float:right;
+}
+
+.sitefooter {
+  padding-left: 10px;
+}
+
+.gravatar {
+  padding-right: 20px;
+}
+
+#main a:link { color: #000; text-decoration: underline; }
+#main a:visited { color: #000; text-decoration: underline; }
+footer a:link { color: #000; text-decoration: underline; }
+footer a:visited { color: #000; text-decoration: underline; }
+#topheader a:link { color:#fff; text-decoration: underline; }
+#topheader a:visited { color: #fff; text-decoration: underline; }
+#topheader input[type=search] { color: #fff; background: #000; margin-left: 20px; padding: 5px; border: 1px solid #ff7f50;}
+#topheader input[type=submit] { color: #fff; background: #ff8c00; padding: 5px 10px; border: 1px solid #ff7f50;}
+
+#loginSubmit { width: 100%; }
+
+.user-panel {
+  color: #ccc;
+  background: #000;
+  border: 0px;
+  padding: 5px 10px;
+  border: 1px solid #ff7f50;  
+}
+
+.user-panel:hover {
+  color: #ff8c00;
+}
+
+#user-panel-links {
+  display: none;
+  position: absolute;
+  top: 52px;
+  min-width: 100px;
+  background: #000;
+  border: 1px solid #ff7f50;
+  padding: 10px 5px;
+  padding-right: 15px;
+  border-radius: 5px;
+  margin: 0px;
+}
+
+#user-panel-links input { color: #000; }
+
+#user-panel-links a:link, a:visited {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px dashed #ccc;
+}
+
+#user-panel-links a:hover {
+  color: #ff8c00;
+}
+
+#user-panel-links ul {
+  list-style: none;
+}
+
+.backgroundGrey { background: #ccc; }
+
+.profileForm {
+  width: 500px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.profileForm label {
+  float:left; 
+  text-align: right;
+  width: 100px;
+  margin-right: 10px;
+  font-style: italic;
+}
+
+.profileForm fieldset {
+  padding-top: 50px;
+  border-color: #ff8c00;
+  font-weight:bold;
+}
+
+.profileForm input[type=text] {
+  width: 200px;
+  background: #000;
+  border: 1px solid #ff8c00;
+  padding: 5px;
+  color: #fff;
+}
+
+.profileForm input[type=submit] { 
+  width: 210px; 
+  background: #ff8c00; 
+  border: 0px; 
+  color: #fff; 
+  padding: 5px 10px; 
+  margin-left: 110px;
+}
+
+.profileForm textarea {
+  width: 205px;
+  height: 70px;
+  border: 1px solid #ff8c00;
+  background: #000;
+  color: #fff;
+}
+
+#question {
+  padding: 15px 0px;
+  border-bottom: 1px dashed #ccc;
+  min-height: 130px;
+}
+
+.postedby {
+  float:left;
+  width: 100px;
+  border-right: 1px dashed #ccc; 
+  margin-right: 15px;
+}
+
+.postedby img {
+  padding: 10px 0; 
+}
+
+.content {
+  float: left;
+  padding-left: 15px;
+}
+
+.created {
+  font-size: 10px;
+  font-style: italic;
+  clear: both;
+  border-top: 1px solid #ccc;
+  padding-left: 10px;
+  position: relative;
+  bottom: -40px;
+  left: 100px;
+}
+
+.searchForm {
+  display: inline;
+  padding-left: 10px;
+}
+
+.searchForm select {
+  color: #ccc;
+  padding: 5px 10px;
+  border: 1px solid #ff8c00;
+  background: #000;
+  margin-left: 20px;
+}
+
+.gradient {
+  background: rgb(255,183,107); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(255,183,107,1) 0%, rgba(255,167,61,1) 50%, rgba(255,124,0,1) 51%, rgba(255,127,4,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,183,107,1)), color-stop(50%,rgba(255,167,61,1)), color-stop(51%,rgba(255,124,0,1)), color-stop(100%,rgba(255,127,4,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(255,183,107,1) 0%,rgba(255,167,61,1) 50%,rgba(255,124,0,1) 51%,rgba(255,127,4,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(255,183,107,1) 0%,rgba(255,167,61,1) 50%,rgba(255,124,0,1) 51%,rgba(255,127,4,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(255,183,107,1) 0%,rgba(255,167,61,1) 50%,rgba(255,124,0,1) 51%,rgba(255,127,4,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(255,183,107,1) 0%,rgba(255,167,61,1) 50%,rgba(255,124,0,1) 51%,rgba(255,127,4,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb76b', endColorstr='#ff7f04',GradientType=0 ); /* IE6-9 */
+  text-shadow: 2px 2px 5px #000000;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #f7f7f7;
+  text-align: center;
+  margin:0;
+}
+
+.latestBox {
+  width: 30%;
+  margin-right: 20px;
+  float:left;
+}
