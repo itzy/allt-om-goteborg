@@ -12,9 +12,7 @@ Installing Instructions
 -Set chmod on: 
 
         -webroot
-        
         -webroot/.htsqlite.db
-        
         -webroot/css/allt-om-goteborg/style.less.cache
 
 
