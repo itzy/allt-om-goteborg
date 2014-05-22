@@ -8,10 +8,15 @@ Installing Instructions
 ========================
 
 -Get you're copy of [allt-om-goteborg][2].
+
 -Set chmod on: 
+
         -webroot
+        
         -webroot/.htsqlite.db
+        
         -webroot/css/allt-om-goteborg/style.less.cache
+
 
 -Then you're ready to go!
 
